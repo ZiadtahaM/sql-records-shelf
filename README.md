@@ -1,32 +1,32 @@
-# CRUD Code Shelf
+# SQL Records Shelf: Fullstack Database Record Workspace
 
-A web application for storing, managing, and organizing code snippets.
+Modular fullstack CRUD application featuring an Express.js backend, relational SQL schema persistence, input validation, and an interactive record dashboard.
 
-## Architecture
+```mermaid
+graph TD
+    Frontend[Web Interface] -->|JSON API| Server[Express.js Application Server]
+    Server --> Router[Routes Dispatcher]
+    Router --> Controller[Records Controller]
+    Controller --> DB[(Relational SQL Database Engine)]
+```
 
-This project implements a three-tier architecture:
-- Frontend: React application
-- Backend: Express Node.js server
-- Database: PostgreSQL
+## System Architecture
 
-## Setup
+- **`schema.sql`**: Relational database table definitions, indexing strategies, and constraint declarations.
+- **`backend/`**: Modular Node.js / Express server organized with controllers, routing middleware, and database adapters.
+- **`frontend/`**: Responsive client interface for inspecting, filtering, adding, and modifying catalog records.
 
-1. Install dependencies:
-   cd backend && npm install
-   cd ../frontend && npm install
+## Technology Stack
 
-2. Initialize the database using schema.sql:
-   psql -U postgres -d code_shelf -f schema.sql
+- **Backend**: Node.js, Express.js
+- **Database**: SQL (PostgreSQL / SQLite compatible)
+- **Frontend**: HTML5, CSS3, JavaScript
 
-3. Run the backend:
-   cd backend && node index.js
+## Getting Started
 
-4. Run the frontend:
-   cd frontend && npm start
-
-## Features
-
-- Create snippets specifying title, language, and the code content.
-- Read snippets on the dashboard.
-- Update snippets.
-- Delete snippets.
+```bash
+# Backend setup
+cd backend
+npm install
+npm start
+```
